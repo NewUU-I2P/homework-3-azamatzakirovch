@@ -1,31 +1,47 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 int main() {
+    int digit;
+    cout << "Enter a digit: ";
+    cin >> digit;
 
-    srand(time(0));
-    int generatedNumber = rand() % 90 + 10;
-
-    int userPrediction;
-    cout << "Enter your prediction (a two-digit integer): ";
-    cin >> userPrediction;
-
-
-    int accuracy;
-    if (userPrediction == generatedNumber) {
-        accuracy = 100;
-    } else if (userPrediction % 10 == generatedNumber % 10 || userPrediction / 10 == generatedNumber / 10) {
-        accuracy = 50;
-    } else {
-        accuracy = 0;
+    switch (digit) {
+        case 0:
+            cout << "zeRO";
+            break;
+        case 1:
+            cout << "one";
+            break;
+        case 2:
+            cout << "TWO";
+            break;
+        case 3:
+            cout << "THREE";
+            break;
+        case 4:
+            cout << "fOUR";
+            break;
+        case 5:
+            cout << "fIVE";
+            break;
+        case 6:
+            cout << "SIX";
+            break;
+        case 7:
+            cout << "SEVEN";
+            break;
+        case 8:
+            cout << "EIGHT";
+            break;
+        case 9:
+            cout << "NINE";
+            break;
+        default:
+            cout << "ERRORRRRRRR";
+            break;
     }
-
-
-    cout << "Accuracy: " << accuracy << "%" << endl;
 
     return 0;
 }
-
 // FSE 1 ID230055 Azamat Eshqo'ziyev
-// 24th problem
+// 20th problem
