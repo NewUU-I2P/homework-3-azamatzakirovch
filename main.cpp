@@ -1,22 +1,31 @@
 #include <iostream>
-#include "problems/problem_1.cpp"
-#include "problems/problem_2.cpp"
-#include "problems/problem_3.cpp"
-#include "problems/problem_4.cpp"
-#include "problems/problem_5.cpp"
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
-
 int main() {
-    cout << "Problem 1\n";
-    problemSolution1();
-    cout << "Problem 2\n";
-    problemSolution2();
-    cout << "Problem 3\n";
-    problemSolution3();
-    cout << "Problem 4\n";
-    problemSolution4();
-    cout << "Problem 5\n";
-    problemSolution5();
+
+    srand(time(0));
+    int generatedNumber = rand() % 90 + 10;
+
+    int userPrediction;
+    cout << "Enter your prediction (a two-digit integer): ";
+    cin >> userPrediction;
+
+
+    int accuracy;
+    if (userPrediction == generatedNumber) {
+        accuracy = 100;
+    } else if (userPrediction % 10 == generatedNumber % 10 || userPrediction / 10 == generatedNumber / 10) {
+        accuracy = 50;
+    } else {
+        accuracy = 0;
+    }
+
+
+    cout << "Accuracy: " << accuracy << "%" << endl;
+
     return 0;
 }
+
+// FSE 1 ID230055 Azamat Eshqo'ziyev
+// 24th problem
